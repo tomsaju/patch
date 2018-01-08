@@ -3,12 +3,14 @@ package android.tom.patcher;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.tom.patcher.diary.DiaryEditorActivity;
 import android.tom.patcher.notes.NoteListActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.androidnetworking.AndroidNetworking;
 import com.facebook.stetho.Stetho;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +21,8 @@ ListView mainList;
         setContentView(R.layout.activity_main);
         Stetho.initializeWithDefaults(this);
         mainList = (ListView) findViewById(R.id.homeList);
-        String[] indexList = new String[]{"Notes"};
+        String[] indexList = new String[]{"Notes","Unsplash"};
+        AndroidNetworking.initialize(getApplicationContext());
 
         ArrayAdapter listAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,android.R.id.text1,indexList);
         mainList.setAdapter(listAdapter);
@@ -29,10 +32,12 @@ ListView mainList;
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        Intent noteavt = new Intent(MainActivity.this, NoteListActivity.class);
+                        Intent noteavt = new Intent(MainActivity.this, DiaryEditorActivity.class);
                         startActivity(noteavt);
                         break;
-
+                    case 1:
+                        Intent notevt = new Intent(MainActivity.this, UnsplashActivity.class);
+                        startActivity(notevt);
                     default:
                 }
                 // Toast.makeText(MainActivity.this, "clicked", Toast.LENGTH_SHORT).show();

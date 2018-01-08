@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.tom.patcher">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +20,10 @@
         </activity>
         <activity android:name=".notes.NoteListActivity" />
         <activity android:name=".notes.NoteEditorActivity" />
-        <activity android:name=".graph.GraphActivity"></activity>
+        <activity android:name=".graph.GraphActivity" />
+        <activity android:name=".UnsplashActivity" />
+        <activity android:name=".diary.DiaryListActivity" />
+        <activity android:name=".diary.DiaryEditorActivity"></activity>
     </application>
 
 </manifest>
