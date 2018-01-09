@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="20dp"
+    android:maxHeight="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:singleLine="true"
+        android:id="@+id/dayTV"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOV"
+        android:id="@+id/monthTV"
+        android:textSize="15sp"
+        android:paddingBottom="5dp"
+        android:singleLine="true"
+        android:layout_below="@+id/dayTV"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yearTV"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="2016"/>
+
+</RelativeLayout>

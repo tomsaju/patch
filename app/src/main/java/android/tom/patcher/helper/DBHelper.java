@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.tom.patcher.diary.Diary;
 import android.tom.patcher.model.Mood;
 import android.tom.patcher.notes.Note;
 
@@ -36,12 +37,31 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DATE = "Date";
 
 
+    public static final String TABLE_DIARY = "diary";
+
+    public static final String DIARY_ID = "_id";
+    public static final String DIARY_TITLE = "Title";
+    public static final String DIARY_CONTENT = "Content";
+    public static final String DIARY_DATE = "Date";
+    public static final String DIARY_DAY = "day";
+    public static final String DIARY_DAY_OF_WEEK = "dayOfWeek";
+    public static final String DIARY_MONTH = "month";
+    public static final String DIARY_YEAR = "year";
+
     //Table creation statements
     public static final String NOTES_TABLE_CREATE_STATEMENT = "CREATE TABLE "+TABLE_NOTES+" ( "+NOTE_ID +" INTEGER PRIMARY KEY AUTOINCREMENT ,"+
             NOTE_TITLE +" TEXT ,"+
             NOTE_CONTENT + " TEXT ,"+
             NOTE_DEF_ID + " INTEGER ,"+
             NOTE_DATE + " TEXT );";
+
+    public static final String DIARY_TABLE_CREATE_STATEMENT = "CREATE TABLE "+TABLE_DIARY+" ( "+DIARY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT ,"+
+            DIARY_TITLE +" TEXT ,"+
+            DIARY_CONTENT + " TEXT ,"+
+            DIARY_DAY + " INTEGER ,"+
+            DIARY_YEAR + " INTEGER ,"+
+            DIARY_MONTH + " INTEGER ,"+
+            DIARY_DAY_OF_WEEK + " TEXT );";
 
 
     public static final String MOOD_TABLE_CREATE_STATEMENT = "CREATE TABLE "+TABLE_MOOD+" ( "+
@@ -57,7 +77,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(NOTES_TABLE_CREATE_STATEMENT);
 
         sqLiteDatabase.execSQL(MOOD_TABLE_CREATE_STATEMENT);
-
+        sqLiteDatabase.execSQL(DIARY_TABLE_CREATE_STATEMENT);
     }
 
     @Override
@@ -171,7 +191,77 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return note;
     }
+///////////diary section
 
+    //fields for table_notes
+  //  public static final String TABLE_DIARY = "diary";
+
+
+
+
+    public Cursor getAllDiaryCursor(){
+        db = this.getWritableDatabase();
+
+        Cursor cursor;
+        cursor = db.query(TABLE_DIARY,null,null,null,null,null,null);
+
+        return cursor;
+    }
+
+    public void insertintoDiaryTable(Diary diary, boolean newDiary){
+        db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        if(!newDiary) {
+            cv.put(DIARY_ID, diary.getId());
+        }
+        cv.put(DIARY_TITLE,diary.getTitle());
+        cv.put(DIARY_CONTENT,diary.getContent());
+        cv.put(DIARY_DAY,diary.getDay());
+        cv.put(DIARY_DAY_OF_WEEK,diary.getDayOfWeek());
+        cv.put(DIARY_MONTH,diary.getMonth());
+        cv.put(DIARY_YEAR,diary.getYear());
+
+
+        if(newDiary) {
+            db.insert(TABLE_DIARY, null, cv);
+        }else{
+            db.update(TABLE_DIARY,cv,DIARY_ID+ " = "+diary.getId(),null);
+        }
+
+        db.close();
+    }
+
+
+    public Diary getDiaryForId(int id){
+       Diary diary = new Diary();
+        db = this.getWritableDatabase();
+        Cursor cursor;
+
+        cursor = db.query(TABLE_DIARY,null,DIARY_ID+" = "+id,null,null,null,null);
+
+        if(cursor.getCount()>0){
+
+            while(cursor.moveToNext()){
+                String diaryContent = cursor.getString(cursor.getColumnIndexOrThrow(DIARY_CONTENT));
+                String diaryTitle = cursor.getString(cursor.getColumnIndexOrThrow(DIARY_TITLE));
+                int diaryId = cursor.getInt(cursor.getColumnIndexOrThrow(DIARY_ID));
+                int  diaryDay = cursor.getInt(cursor.getColumnIndexOrThrow(DIARY_DAY));
+                int diaryMonth = cursor.getInt(cursor.getColumnIndexOrThrow(DIARY_MONTH));
+                int diaryYear = cursor.getInt(cursor.getColumnIndexOrThrow(DIARY_YEAR));
+                String diaryDayofWeek = cursor.getString(cursor.getColumnIndexOrThrow(DIARY_DAY_OF_WEEK));
+
+                diary.setTitle(diaryTitle);
+                diary.setContent(diaryContent);
+                diary.setDay(diaryDay);
+                diary.setDayOfWeek(diaryDayofWeek);
+                diary.setMonth(diaryMonth);
+                diary.setId(diaryId);
+                diary.setYear(diaryYear);
+            }
+
+        }
+        return diary;
+    }
 
 
 }

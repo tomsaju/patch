@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.tom.patcher.diary.DiaryEditorActivity;
+import android.tom.patcher.diary.DiaryListActivity;
 import android.tom.patcher.notes.NoteListActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,7 +22,7 @@ ListView mainList;
         setContentView(R.layout.activity_main);
         Stetho.initializeWithDefaults(this);
         mainList = (ListView) findViewById(R.id.homeList);
-        String[] indexList = new String[]{"Notes","Unsplash"};
+        String[] indexList = new String[]{"Notes","Unsplash","Diary"};
         AndroidNetworking.initialize(getApplicationContext());
 
         ArrayAdapter listAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,android.R.id.text1,indexList);
@@ -38,6 +39,11 @@ ListView mainList;
                     case 1:
                         Intent notevt = new Intent(MainActivity.this, UnsplashActivity.class);
                         startActivity(notevt);
+                        break;
+                    case 2:
+                        Intent diaryavt = new Intent(MainActivity.this, DiaryListActivity.class);
+                        startActivity(diaryavt);
+                        break;
                     default:
                 }
                 // Toast.makeText(MainActivity.this, "clicked", Toast.LENGTH_SHORT).show();
