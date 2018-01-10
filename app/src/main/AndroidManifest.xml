@@ -23,7 +23,9 @@
         <activity android:name=".graph.GraphActivity" />
         <activity android:name=".UnsplashActivity" />
         <activity android:name=".diary.DiaryListActivity" />
-        <activity android:name=".diary.DiaryEditorActivity"></activity>
+        <activity android:name=".diary.DiaryEditorActivity" />
+        <activity android:name=".About.AboutActivity" />
+        <activity android:name=".settings.SettingsActivity"></activity>
     </application>
 
 </manifest>

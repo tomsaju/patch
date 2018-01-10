@@ -1,3 +1,103 @@
 <resources>
-    <string name="app_name">Patcher</string>
+
+
+    <string name="app_name">Smile</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="crash_toast_text">Preparing an error report</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash_screen">Smile</string>
+    <string name="title_activity_emotional">today</string>
+    <string name="todays_quote">Today\'s Quote:</string>
+    <string name="title_activity_emotionlst">Smile</string>
+    <string name="title_activity_how2">Smile</string>
+    <string name="title_activity_anger">Emotional surge</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </string>
+    <string name="title_activity_quotes">Quotes</string>
+    <string name="title_activity_temp">Oops!</string>
+    <string name="title_activity_quote_intro">Quotes</string>
+    <string name="title_activity_good">Feeling Good?</string>
+    <string name="title_activity_mystuff">My stuff</string>
+    <string name="title_activity_reports">Reports</string>
+    <string name="title_activity_scrapbook">Scrapbook</string>
+    <string name="title_activity_help_other">Help_other</string>
+    <string name="about">Smile is an app to help you stay positive. Smile is in no way affiliated to any websites. The contents in this app is not intended to be a substitute for professional medical advice or treatment. Always seek the advice of a qualified counsellor for better results. Activities mentioned in this should be done in your own risk.</string>
+    <string name="empty">Click + button to add notes</string>
+    <string name="contact">Questions, feedback, or suggestions? Feel free to contact us.</string>
+    <string name="title_activity_create_note">Create_note</string>
+    <string name="title_activity_fav_quotes">FavQuotes</string>
+    <string name="title_activity_notebook">Notebook</string>
+    <string name="title_activity_mybasebar_home">MybasebarHome</string>
+    <string name="title_activity_notes_list">Notes</string>
+    <string name="title_activity_edit_note">Note</string>
+    <string name="title_activity_diary_list">Diary</string>
+    <string name="title_activity_activity_diary">Diary</string>
+    <string name="title_activity_activity_diary_edit">Diary</string>
+    <string name="title_activity_password_entry">Password</string>
+    <string name="title_activity_single_item_view"></string>
+    <string name="title_activity_stay_positive">Stay Positive</string>
+    <string name="title_activity_password_setting">Password</string>
+    <string name="title_activity_mental_gym">Mental Gym</string>
+    <string name="title_activity_breathing">Mental Gym</string>
+    <string name="title_activity_meditation"></string>
+    <string name="title_activity_about">About</string>
+    <string name="crash_dialog_text">Sorry. An unexpected error has occured which forced to close the application. Help us fix this by sending an error report.Click the OK button to send.</string>
+    <string name="crash_dialog_comment_prompt">You might add your comments about this error below</string>
+    <string name="crash_dialog_title">Smile has crashed :(</string>
+    <string name="smile">Smile</string>
+    <string name="images_from">Images from www.pixabay.com and Icons made by Freepik from www.flaticon.com</string>
+    <string name="contact_us">Contact us</string>
+    <string name="version_1_0">Version 2.0</string>
+    <string name="from_saltt_inc">from SALTT</string>
+    <string name="emotional_surge_when_emotions_take_over">Emotional Surge
+\n
+\nWhen emotions take over</string>
+    <string name="mental_gym">Mental Gym
+\n
+\nWorkouts for a healthy mind</string>
+    <string name="stay_positive">Stay positive
+\n
+\nRecommended articles</string>
+    <string name="quotes">Quotes
+\n
+\nPositive quotes for you</string>
+    <string name="my_stuffs">My Stuffs
+\n
+\n Notes, Diaries and more...</string>
+    <string name="press_the_back_button">Press the back button again to exit.</string>
+    <string name="title_activity_single_quote">Quote</string>
+    <string name="title_activity_report_detail">Report</string>
+    <string name="title_activity_intro_activity"></string>
+    <string name="title_activity_sintro"></string>
+    <string name="notes">Notes</string>
+    <string name="diary">Diary</string>
+    <string name="my_reports">My Reports</string>
+    <string name="it_s_all_personal">It\'s all personal</string>
+    <string name="save">save</string>
+    <string name="delete">delete</string>
+    <string name="title_activity_recomms"> </string>
+    <string name="spare_quote">There is no royal road to anything, one thing at a time, all things in succession. That which grows fast, withers as rapidly. That which grows slowly, endures</string>
+    <string name="spare_author">Josiah Gilbert Holland</string>
+    <string name="emotional_surge_bottom">ca-app-pub-6616513492327950/9193277024</string>
+    <string name="Mental_gym_bottom">ca-app-pub-6616513492327950/1670010227</string>
+    <string name="Quotes_bottom">ca-app-pub-6616513492327950/3146743428</string>
+    <string name="Notes_list_bottom">ca-app-pub-6616513492327950/4623476621</string>
+    <string name="Diary_list_bottom">ca-app-pub-6616513492327950/6100209823</string>
+    <string name="Notes_edit">ca-app-pub-6616513492327950/7576943028</string>
+    <string name="Diary_edit">ca-app-pub-6616513492327950/9053676220</string>
+    <string name="stay_positive_bottom">ca-app-pub-6616513492327950/3910296223</string>
+    <string name="title_activity_help">Help</string>
+    <string name="emotional_surge_help">Use this when your emotions start to control you. Know more about what\'s happening in you and get help to overcome it.</string>
+    <string name="mental_gym_help">Your mind needs some exercises to stay healthy. This section tells you different techniques for a happy mind.</string>
+    <string name="stay_positive_help">Read the best articles from the internet every day that can help you to live a better life.
+\n(Copyright of all the images and contents belongs to the respective site or author)</string>
+    <string name="quotes_help">Get motivated, inspired and informed from quotes. Go to Settings to turn on quotes notification to get daily quote notification on your device.</string>
+    <string name="my_stuff_help">Save your notes, write daily diary and get reports on your month in this section. You can password protect this section. Go to settings - Privacy to make your data private.</string>
+    <string name="my_report_help">"Track your days and get reports on how it's going. For this feature, you must rate your days. You can rate each day by going to "Today" section by clicking the 't' icon on the home screen. You can also set a reminder to get a notification asking you to rate your day, daily at a particular time. (If you are using android version 4.4 or above, you can update your rating from the notification itself, without entering the app). Go to Settings - Daily mood query.\n\nHow to use My Reports?\n\nUse 'My Reports' to get details on how your days are going. You need at least 7 day's rating (From the same month) to get a report. After viewing your reports, click the 'Make it better' button to see the recommended articles for you. The articles you see will be based on your reports and will be different each time."</string>
+    <string name="tap_to_begin">Tap to begin</string>
+    <string name="quote_intro">A collection of handpicked quotes for you</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

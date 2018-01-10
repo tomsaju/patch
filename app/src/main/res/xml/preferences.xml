@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+            android:title="NOTIFICATIONS"
+            android:key="notifications">
+
+            <CheckBoxPreference
+                android:key="show_daily_quotes"
+                android:summary="Check if you want daily quote notification"
+                android:title="Show Daily Quotes"
+                android:defaultValue="true"/>
+
+            <Preference
+                android:key="quote_notification_time"
+                android:title="Notification Time"
+                android:summary="Set your desired time for notification"
+                android:defaultValue="08:00"
+                android:dependency="show_daily_quotes"/>
+
+
+        <CheckBoxPreference
+            android:key="daily_mood_query"
+            android:summary="check if app want you to remind you to update the daily mood by notification"
+            android:title="Remind me to update my daily mood"
+            android:defaultValue="true"/>
+
+        <Preference
+            android:key="query_notification_time"
+            android:title="Notification Time"
+            android:summary="Set your desired time for notification"
+            android:defaultValue="21:00"
+            android:dependency="daily_mood_query"/>
+
+    </PreferenceCategory>
+        <PreferenceCategory
+            android:title="PRIVACY"
+            android:key="privacy">
+
+
+            <Preference
+                android:key="set_password_for_mystuff"
+                android:title="Set password for My Stuff"
+                android:summary=""/>
+
+
+        </PreferenceCategory>
+
+
+        <PreferenceCategory
+            android:title="MORE"
+            android:key="more">
+
+
+            <Preference
+                android:key="help"
+                android:title="Help">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="android.tom.patcher"
+                android:targetClass="android.tom.patcher.About.AboutActivity" />
+            </Preference>
+            <Preference
+                android:key="about"
+                android:title="About">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:targetPackage="android.tom.patcher"
+                    android:targetClass="android.tom.patcher.About.AboutActivity" />
+            </Preference>
+
+
+
+
+
+        </PreferenceCategory>
+
+
+</PreferenceScreen>
