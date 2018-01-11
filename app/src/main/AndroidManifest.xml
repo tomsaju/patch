@@ -26,6 +26,7 @@
         <activity android:name=".diary.DiaryEditorActivity" />
         <activity android:name=".About.AboutActivity" />
         <activity android:name=".settings.SettingsActivity"></activity>
+        <receiver android:name=".Alarm.AlarmReceiver"/>
     </application>
 
 </manifest>

@@ -1,7 +1,10 @@
 package android.tom.patcher.settings;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -9,6 +12,8 @@ import android.preference.PreferenceFragment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.tom.patcher.Alarm.AlarmReceiver;
+import android.tom.patcher.MainActivity;
 import android.tom.patcher.R;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -123,6 +128,8 @@ public class SettingsActivity extends AppCompatActivity {
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         String selectedTime = selectedHour+":"+selectedMinute;
                        sharedPreferences.edit().putString("quote_time",selectedTime).commit();
+
+                       setRepeatingQuote(selectedTime);
                     }
                 }, hour, min, true);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
@@ -150,15 +157,26 @@ public class SettingsActivity extends AppCompatActivity {
 
         }
 
+        private void setRepeatingQuote(String selectedTime) {
+            String[] timeString = selectedTime.split ( ":" );
+            int hour = Integer.parseInt ( timeString[0].trim() );
+            int min = Integer.parseInt ( timeString[1].trim() );
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, hour);
+            calendar.set(Calendar.MINUTE, min);
+            calendar.set(Calendar.SECOND, 0);
+            Intent intent1 = new Intent(context, AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0,intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+            AlarmManager am = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+            am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
+
         @Override
         public boolean onPreferenceClick(Preference preference) {
-            String key = preference.getKey();
-             if(key.equals("quote_notification_time")){
-               // ShowTimePicker(sharedPreferences,key);
-            }
-        return true;
-        }
+           return false;
     }
+}
 }
 
 
